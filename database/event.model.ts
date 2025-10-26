@@ -133,7 +133,7 @@ EventSchema.pre('save', function (next) {
 
   // Normalize time format to HH:MM (24-hour format)
   if (this.isModified('time')) {
-    const timeRegex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
+    const timeRegex = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
     if (!timeRegex.test(this.time)) {
       return next(new Error('Time must be in HH:MM format (24-hour)'));
     }
@@ -141,9 +141,6 @@ EventSchema.pre('save', function (next) {
 
   next();
 });
-
-// Create unique index on slug
-EventSchema.index({ slug: 1 }, { unique: true });
 
 // Use existing model if available (prevents OverwriteModelError in development)
 const Event = models.Event || model<IEvent>('Event', EventSchema);
