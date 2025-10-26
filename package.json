@@ -2,6 +2,9 @@
   "name": "js-mastery-next",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,6 +15,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.548.0",
+    "mongoose": "^8.19.2",
     "next": "16.0.0",
     "ogl": "^1.0.11",
     "posthog-js": "^1.280.1",
